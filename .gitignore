@@ -10,5 +10,10 @@
 /src/FromScratch.Web.Api/bin
 /src/FromScratch.Web.Api/obj
 
+/src/FromScratch.Unit.Tests/bin
+/src/FromScratch.Unit.Tests/obj
+
+/src/FromScratch.Services/bin
+/src/FromScratch.Services/obj
 
 /src/packages

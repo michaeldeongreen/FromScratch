@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromScratch.Web.Api", "From
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromScratch.Domain", "FromScratch.Domain\FromScratch.Domain.csproj", "{A78E9ACB-CBEE-4A74-A2CE-66D27C315ACC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromScratch.Unit.Tests", "FromScratch.Unit.Tests\FromScratch.Unit.Tests.csproj", "{141EFCD1-FA75-4DFF-8377-1C9BED3E5EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FromScratch.Services", "FromScratch.Services\FromScratch.Services.csproj", "{2216A79D-6998-418D-8DF2-6AFF602C22B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A78E9ACB-CBEE-4A74-A2CE-66D27C315ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A78E9ACB-CBEE-4A74-A2CE-66D27C315ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A78E9ACB-CBEE-4A74-A2CE-66D27C315ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141EFCD1-FA75-4DFF-8377-1C9BED3E5EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141EFCD1-FA75-4DFF-8377-1C9BED3E5EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141EFCD1-FA75-4DFF-8377-1C9BED3E5EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141EFCD1-FA75-4DFF-8377-1C9BED3E5EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2216A79D-6998-418D-8DF2-6AFF602C22B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2216A79D-6998-418D-8DF2-6AFF602C22B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2216A79D-6998-418D-8DF2-6AFF602C22B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2216A79D-6998-418D-8DF2-6AFF602C22B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
