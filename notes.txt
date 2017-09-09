@@ -1,0 +1,40 @@
+Unit of Work Pattern with EF
+
+IDbContext
+
+
+Injection Order
+	* Context
+	* UOW
+
+UnitOfWork : IUnitOfWork
+	ICompanyRepository
+	IEmployeeRepository
+
+IUnitOfWork
+	Save()
+
+	IDBContext
+	ICompanyRepository
+	IEmployeeRepository
+	
+CompanyRepository, Repository, ICompanyRepository	
+	Needs context or UOW
+	
+ICompanyRepository, IRepository	
+	Needs context or UOW
+
+Repository : IRepository	
+	Needs context or UOW
+	
+IRepository<T>
+	Add(T)
+	Remove(T)
+	T Get(int id)
+	IQueryable<T> GetAll()
+	IQueryable<T> Get(Expression)
+
+
+1) Create new IDomain
+2) Add new IDomain to UnitOfWork
+3) Add new IDomain to UnitOfWork

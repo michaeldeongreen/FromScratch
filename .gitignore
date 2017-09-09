@@ -1,0 +1,14 @@
+*.user
+
+/.vs
+/src/.vs
+/src/FromScratch/.vs
+
+/src/FromScratch.Domain/bin
+/src/FromScratch.Domain/obj
+
+/src/FromScratch.Web.Api/bin
+/src/FromScratch.Web.Api/obj
+
+
+/src/packages
