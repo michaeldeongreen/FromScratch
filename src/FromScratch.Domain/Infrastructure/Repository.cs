@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FromScratch.Domain
+namespace FromScratch.Domain.Infrastructure
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {

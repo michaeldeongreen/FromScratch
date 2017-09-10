@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FromScratch.Domain.Interfaces;
+using FromScratch.Domain.Infrastructure;
 
 namespace FromScratch.Domain.Repositories
 {

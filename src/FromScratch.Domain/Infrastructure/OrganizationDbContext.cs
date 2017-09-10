@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FromScratch.Domain
+namespace FromScratch.Domain.Infrastructure
 {
     public class OrganizationDbContext : DbContext, IDbContext
     {
