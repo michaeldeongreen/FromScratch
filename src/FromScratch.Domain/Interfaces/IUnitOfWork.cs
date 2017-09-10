@@ -10,6 +10,7 @@ namespace FromScratch.Domain.Interfaces
     public interface IUnitOfWork
     {
         ICompanyRepository CompanyRepository{ get; }
+        IEmployeeRepository EmployeeRepository { get; }
         int Save();
     }
 }

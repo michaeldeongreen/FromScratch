@@ -13,6 +13,12 @@ namespace FromScratch.Web.Api.Controllers
     {
         public CompanyController(IUnitOfWork uow) : base(uow)
         {
+            _uow.CompanyRepository.Add(new Company()
+            {
+                Name = "Ethereum Foundation",
+                Employees = new List<Employee>() { new Employee() { FirstName = "Vitalik", LastName = "Buterin" } }
+            });
+            _uow.Save();
         }
 
         [HttpGet]

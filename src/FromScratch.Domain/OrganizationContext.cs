@@ -26,9 +26,13 @@ namespace FromScratch.Domain
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<OrganizationContext>(new CreateDatabaseIfNotExists<OrganizationContext>());
-            //Database.SetInitializer<OrganizationContext>(null);
             modelBuilder.Entity<Company>().ToTable("Company");
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Employee>().ToTable("Employee")
+                .HasRequired(e => e.Company)
+                .WithMany(e => e.Employees)
+                .HasForeignKey(e => e.CompanyId);
+
+            //base.OnModelCreating(modelBuilder);
         }
     }
 }

@@ -309,6 +309,10 @@
       <Project>{a78e9acb-cbee-4a74-a2ce-66d27c315acc}</Project>
       <Name>FromScratch.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FromScratch.Services\FromScratch.Services.csproj">
+      <Project>{2216a79d-6998-418d-8df2-6aff602c22b3}</Project>
+      <Name>FromScratch.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
