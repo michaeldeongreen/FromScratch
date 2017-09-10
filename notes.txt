@@ -43,3 +43,16 @@ To add a new Table:
 
 More methods:
 https://github.com/michaeldeongreen/Angular.io.QuickStart.Web.Api/blob/master/Angular.io.QuickStart.Web.Api.Repository/Repository.cs
+
+1) Problem
+	* Has to pass tons of repository objects to Classes
+	* Domain Objects have to be related to save in 1 transaction
+	* If you try to save (update) in 1 transaction, you get errors due to the session being closed
+	
+2) Solution
+	* Inject and work with 1 Object, ie UOW
+	* Can be mocked
+	* Intuitive
+	* Repositories can implement different interfaces
+	
+	* Con, see To add section above
