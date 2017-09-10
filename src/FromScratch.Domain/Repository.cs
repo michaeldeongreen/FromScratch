@@ -25,17 +25,28 @@ namespace FromScratch.Domain
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            if (_dbContext.Entry(entity).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entity);
+            }
+            _dbSet.Remove(entity);
         }
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            IQueryable<TEntity> query = _dbSet;
+
+            if (filter != null)
+            {
+                query = _dbSet.Where(filter);
+            }
+
+            return query.ToList();
         }
 
         public TEntity Get(object id)
         {
-            throw new NotImplementedException();
+            return _dbSet.Find(id);
         }
 
         public IQueryable<TEntity> GetAll()
@@ -45,7 +56,8 @@ namespace FromScratch.Domain
 
         public void Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Modified;
         }
     }
 }

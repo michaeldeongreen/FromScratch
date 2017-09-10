@@ -15,9 +15,10 @@ namespace FromScratch.Web.Api.Controllers
         {
             _uow.CompanyRepository.Add(new Company()
             {
-                Name = "Ethereum Foundation",
-                Employees = new List<Employee>() { new Employee() { FirstName = "Vitalik", LastName = "Buterin" } }
+                Name = "Lightening Network",
+                Employees = new List<Employee>() { new Employee() { FirstName = "Joe", LastName = "Poon" } }
             });
+            _uow.LogRepository.Add(new Log() { Description = "Inserted a new Company into the database." });
             _uow.Save();
         }
 

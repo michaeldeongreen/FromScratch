@@ -35,6 +35,11 @@ IRepository<T>
 	IQueryable<T> Get(Expression)
 
 
-1) Create new IDomain
-2) Add new IDomain to UnitOfWork
-3) Add new IDomain to UnitOfWork
+To add a new Table:
+1) Create new IDomainRepository
+2) Create new DomainRepository
+2) Add new IDomainRepository to UnitOfWork
+3) Add new IDomainRepository to UnitOfWork
+
+More methods:
+https://github.com/michaeldeongreen/Angular.io.QuickStart.Web.Api/blob/master/Angular.io.QuickStart.Web.Api.Repository/Repository.cs

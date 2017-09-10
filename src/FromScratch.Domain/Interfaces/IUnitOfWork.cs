@@ -11,6 +11,7 @@ namespace FromScratch.Domain.Interfaces
     {
         ICompanyRepository CompanyRepository{ get; }
         IEmployeeRepository EmployeeRepository { get; }
+        ILogRepository LogRepository { get; }
         int Save();
     }
 }

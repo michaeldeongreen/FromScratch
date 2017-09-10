@@ -13,8 +13,10 @@ namespace FromScratch.Domain
         private readonly IDbContext _dbContext;
         private ICompanyRepository _companyRepository;
         private IEmployeeRepository _employeeRepository;
+        private ILogRepository _logRepository;
         public ICompanyRepository CompanyRepository { get { return _companyRepository = _companyRepository ?? new CompanyRepository(_dbContext); } }
         public IEmployeeRepository EmployeeRepository { get { return _employeeRepository = _employeeRepository ?? new EmployeeRepository(_dbContext); } }
+        public ILogRepository LogRepository { get { return _logRepository = _logRepository ?? new LogRepository(_dbContext); } }
         public UnitOfWork(IDbContext dbContext)
         {
             _dbContext = dbContext;

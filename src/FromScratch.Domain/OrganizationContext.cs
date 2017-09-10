@@ -3,6 +3,7 @@ using FromScratch.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,10 @@ namespace FromScratch.Domain
             return base.Set<TEntity>();
         }
 
+        public new DbEntityEntry Entry(object entity)
+        {
+            return base.Entry(entity);
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer<OrganizationContext>(new CreateDatabaseIfNotExists<OrganizationContext>());
@@ -31,8 +36,7 @@ namespace FromScratch.Domain
                 .HasRequired(e => e.Company)
                 .WithMany(e => e.Employees)
                 .HasForeignKey(e => e.CompanyId);
-
-            //base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Log>().ToTable("Log");
         }
     }
 }
