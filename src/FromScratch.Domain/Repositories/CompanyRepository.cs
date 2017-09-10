@@ -13,5 +13,12 @@ namespace FromScratch.Domain.Repositories
         public CompanyRepository(IDbContext dbContext) : base(dbContext)
         {
         }
+
+        public IEnumerable<Company> GetByName(string name)
+        {
+            var companies = _dbContext.Set<Company>()
+                .Where(c => c.Name.Contains(name));
+            return companies;
+        }
     }
 }

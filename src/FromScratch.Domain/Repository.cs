@@ -11,7 +11,7 @@ namespace FromScratch.Domain
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
     {
-        private readonly IDbContext _dbContext;
+        protected readonly IDbContext _dbContext;
         private readonly DbSet<TEntity> _dbSet;
         public Repository(IDbContext dbContext)
         {

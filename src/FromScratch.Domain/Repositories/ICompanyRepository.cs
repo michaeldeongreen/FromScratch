@@ -10,5 +10,6 @@ namespace FromScratch.Domain.Repositories
 {
     public interface ICompanyRepository : IRepository<Company>
     {
+        IEnumerable<Company> GetByName(string name);
     }
 }

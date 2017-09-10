@@ -15,8 +15,8 @@ namespace FromScratch.Web.Api.Controllers
         {
             _uow.CompanyRepository.Add(new Company()
             {
-                Name = "Lightening Network",
-                Employees = new List<Employee>() { new Employee() { FirstName = "Joe", LastName = "Poon" } }
+                Name = "Litecoin",
+                Employees = new List<Employee>() { new Employee() { FirstName = "Charlie", LastName = "Lee" } }
             });
             _uow.LogRepository.Add(new Log() { Description = "Inserted a new Company into the database." });
             _uow.Save();
@@ -25,7 +25,10 @@ namespace FromScratch.Web.Api.Controllers
         [HttpGet]
         public IEnumerable<Company> Get()
         {
-            return _uow.CompanyRepository.GetAll();
+            var companies = _uow.CompanyRepository.GetByName("gren");
+            var companies1 = _uow.CompanyRepository.Find(c => c.Name.Contains("erk"));
+            return companies1;
+            //return _uow.CompanyRepository.GetAll();
         }
     }
 }
