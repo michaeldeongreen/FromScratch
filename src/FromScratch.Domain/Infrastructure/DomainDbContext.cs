@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace FromScratch.Domain.Infrastructure
 {
-    public class OrganizationDbContext : DbContext, IDbContext
+    public class DomainDbContext : DbContext, IDbContext
     {
-        public OrganizationDbContext(string connectionString) : base(connectionString) {
+        public DomainDbContext(string connectionString) : base(connectionString) {
         }
 
         public override int SaveChanges() 
@@ -30,13 +30,9 @@ namespace FromScratch.Domain.Infrastructure
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer<OrganizationDbContext>(new CreateDatabaseIfNotExists<OrganizationDbContext>());
-            modelBuilder.Entity<Company>().ToTable("Company");
-            modelBuilder.Entity<Employee>().ToTable("Employee")
-                .HasRequired(e => e.Company)
-                .WithMany(e => e.Employees)
-                .HasForeignKey(e => e.CompanyId);
-            modelBuilder.Entity<Log>().ToTable("Log");
+            Database.SetInitializer<DomainDbContext>(new CreateDatabaseIfNotExists<DomainDbContext>());
+            DomainMap map = new DomainMap(modelBuilder);
+            map.MapEntities();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace FromScratch.Domain
                 scan.TheCallingAssembly();
                 scan.WithDefaultConventions();
             });
-            For<IDbContext>().Use<OrganizationDbContext>().Ctor<string>().Is("OrganizationContext");
+            For<IDbContext>().Use<DomainDbContext>().Ctor<string>().Is("OrganizationContext");
         }
     }
 }
